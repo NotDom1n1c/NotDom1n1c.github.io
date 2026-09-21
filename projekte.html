@@ -148,41 +148,49 @@
 
       <h2 class="cat" id="cat-scripts">
         <span class="cat__nr">C</span>
-        <span data-i18n="cat.scripts">Skripte &amp; Automatisierung</span>
+        <span data-i18n="cat.scripts">Tools &amp; Automatisierung</span>
       </h2>
       <p class="cat__desc" data-i18n="cat.scripts.desc">
-        Eigene Werkzeuge, die mir Arbeit abnehmen. Jedes Skript kannst du hier auch
+        Eigene Programme und Skripte, die mir Arbeit abnehmen. Alles kannst du hier
         herunterladen und selbst anschauen.
       </p>
       <ul class="ccards">
-        <li class="ccard">
-          <div class="ccard__head">
-            <span class="ccard__lang">Lua</span>
-            <h3 class="ccard__name">Cracked Hub</h3>
+        <li class="ccard ccard--wide">
+          <button class="ccard__shot" type="button" data-shot="assets/makro.png" data-title="Makro-Rekorder"
+                  data-alt="Screenshot des Makro-Rekorders: dunkles Fenster mit Status Bereit, Buttons Aufnehmen F9 und Abspielen F10, Einstellungen für Wiederholung, Tempo und Mausbewegung sowie Speichern und Laden">
+            <img src="assets/makro.png" alt="" loading="lazy" />
+          </button>
+          <div class="ccard__main">
+            <div class="ccard__head">
+              <span class="ccard__lang">C#</span>
+              <h3 class="ccard__name">Makro-Rekorder</h3>
+            </div>
+            <p class="ccard__desc" data-i18n="c.makro">
+              Eigenes Windows-Programm, das Mausbewegungen, Klicks, Mausrad und Tastatur
+              aufnimmt und wieder abspielt, auf Wunsch auch endlos. Es hängt sich über
+              systemweite Low-Level-Hooks in Windows ein und spielt die Eingaben mit SendInput
+              wieder ab. Mit F9, F10 und Esc lässt es sich aus jedem Fenster steuern, ohne dass
+              diese Tasten in der Aufnahme landen. Tempo, Anzahl Durchläufe und Pausen sind
+              einstellbar, Aufnahmen werden als Textdatei gespeichert und wieder geladen.
+            </p>
+<pre class="ccard__code"><code>// Steuertasten abfangen, damit sie nicht in der Aufnahme landen
+if (vk == (int)Keys.F9)
+{
+    if (down) BeginInvoke(new MethodInvoker(ToggleRecord));
+    return new IntPtr(1);
+}
+if (vk == (int)Keys.Escape &amp;&amp; playing)
+{
+    stopRequested = true;
+    return new IntPtr(1);
+}
+if (recording) Add(down ? Ev.KDOWN : Ev.KUP, 0, 0, vk);</code></pre>
+            <p class="ccard__meta" data-i18n="c.makro.meta">831 Zeilen C# &middot; WinForms &middot; Windows-API (Hooks, SendInput) &middot; ohne Installation</p>
+            <a class="ccard__dl" href="downloads/Makro-Rekorder.zip" download>
+              <span data-i18n="dl.zip">Programm + Quellcode herunterladen</span>
+              <span class="ccard__size">ZIP &middot; 20 KB</span>
+            </a>
           </div>
-          <p class="ccard__desc" data-i18n="c.cracked">
-            Ein komplettes Bedienoberflächen-Framework für Roblox-Skripte, selbst gebaut
-            statt mit einer fertigen Bibliothek. Es liefert Tabs, Abschnitte, Schalter,
-            Schieberegler, Auswahllisten, Textfelder und Tastenkürzel als wiederverwendbare
-            Bausteine, dazu ein Benachrichtigungssystem, einen Weichzeichner-Hintergrund und
-            mehrsprachige Beschriftungen. Einstellungen werden als JSON gespeichert und beim
-            nächsten Start automatisch wieder geladen.
-          </p>
-<pre class="ccard__code"><code>save = function(self, file_name, config)
-    local success_save, result = pcall(function()
-        local flags = HttpService:JSONEncode(config)
-        writefile(&#39;Cracked - Hub/&#39;..file_name..&#39;.json&#39;, flags)
-    end)
-
-    if not success_save then
-        warn(&#39;failed to save config&#39;, result)
-    end
-end</code></pre>
-          <p class="ccard__meta" data-i18n="c.cracked.meta">7529 Zeilen &middot; Tabs, Slider, Dropdowns, Keybinds &middot; Config als JSON</p>
-          <a class="ccard__dl" href="downloads/Cracked-Hub.lua" download>
-            <span data-i18n="dl.script">Skript herunterladen</span>
-            <span class="ccard__size">Lua &middot; 288 KB</span>
-          </a>
         </li>
 
         <li class="ccard">
@@ -213,6 +221,20 @@ end</code></pre>
 
     </section>
   </main>
+
+  <div class="lb" id="lb" hidden>
+    <div class="lb__backdrop" data-close></div>
+    <div class="lb__panel" role="dialog" aria-modal="true" aria-labelledby="lbTitle">
+      <div class="lb__head">
+        <h2 class="lb__title" id="lbTitle">Vorschau</h2>
+        <a class="lb__go" id="lbGo" href="#" target="_blank" rel="noopener" hidden>&#8599;</a>
+        <button class="lb__close" type="button" data-close aria-label="Vorschau schliessen">&#10005;</button>
+      </div>
+      <div class="lb__body">
+        <img class="lb__img" id="lbImg" src="" alt="" />
+      </div>
+    </div>
+  </div>
 
   <footer class="footer" role="contentinfo">
     <div class="wrap footer__inner">

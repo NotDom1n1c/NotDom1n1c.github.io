@@ -1148,3 +1148,25 @@ main { flex: 1 0 auto; position: relative; }
   background: var(--accent);
   border-color: var(--accent);
 }
+
+/* -------- Breite Code-Kachel mit Screenshot (z.B. Makro-Rekorder) -------- */
+.ccard--wide {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: var(--s-5);
+  align-items: start;
+}
+.ccard__main { display: flex; flex-direction: column; min-width: 0; }
+.ccard__shot {
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--ink);
+  cursor: zoom-in;
+  transition: transform 0.16s ease, border-color 0.16s ease;
+}
+.ccard__shot:hover, .ccard__shot:focus-visible { transform: translateY(-2px); border-color: var(--accent); }
+.ccard__shot img { display: block; width: 100%; height: auto; }
+@media (max-width: 780px) { .ccard--wide { grid-template-columns: 1fr; } }
