@@ -1170,3 +1170,6 @@ main { flex: 1 0 auto; position: relative; }
 .ccard__shot:hover, .ccard__shot:focus-visible { transform: translateY(-2px); border-color: var(--accent); }
 .ccard__shot img { display: block; width: 100%; height: auto; }
 @media (max-width: 780px) { .ccard--wide { grid-template-columns: 1fr; } }
+
+/* Hoechste Kenntnis-Stufe (Sehr gute Kenntnisse) */
+.level--top { color: var(--bg); background: var(--ink); border-color: var(--ink); font-weight: 600; }
