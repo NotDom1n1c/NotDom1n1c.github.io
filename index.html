@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="home.pagetitle">Dominic Aebersold</title>
+  <meta name="description" content="Persönliche Seite von Dominic Aebersold. Informatiker EFZ Plattformentwicklung in Ausbildung an der IPSO IFA Basel." />
+  <meta name="author" content="Dominic Aebersold" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="light" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; base-uri 'self'; form-action 'self'" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Dominic Aebersold" />
+  <meta property="og:description" content="Informatiker EFZ in Ausbildung. Projekte, Ausbildung und Kontakt." />
+  <meta property="og:locale" content="de_CH" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="nav.skip">Zum Inhalt springen</a>
+
+  <header class="topbar">
+    <nav class="pill" aria-label="Hauptnavigation">
+      <a class="pill__link is-active" href="index.html" aria-current="page" data-i18n="nav.start">Start</a>
+      <a class="pill__link" href="profil.html" data-i18n="nav.profil">Profil</a>
+      <a class="pill__link" href="ausbildung.html" data-i18n="nav.ausbildung">Ausbildung</a>
+      <a class="pill__link" href="projekte.html" data-i18n="nav.projekte">Projekte</a>
+      <a class="pill__link" href="socials.html" data-i18n="nav.socials">Socials</a>
+      <a class="pill__link" href="kontakt.html" data-i18n="nav.kontakt">Kontakt</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Sprache / Language">
+      <button class="lang__btn" type="button" data-lang="de">DE</button>
+      <button class="lang__btn" type="button" data-lang="en">EN</button>
+      <button class="lang__btn" type="button" data-lang="fr">FR</button>
+    </div>
+  </header>
+
+  <div class="hero-chains" aria-hidden="true"></div>
+
+  <main id="main">
+    <section class="intro wrap" aria-labelledby="name">
+      <div class="card">
+        <div class="avatar-wrap reveal" style="--i:0">
+          <div class="avatar avatar--photo">
+            <img src="assets/profil.webp" width="128" height="128"
+                 alt="Profilbild von Dominic Aebersold" />
+          </div>
+        </div>
+        <h1 class="card__name reveal" id="name" style="--i:1">Dominic Aebersold</h1>
+        <p class="card__role reveal" style="--i:2">
+          <span data-i18n="home.role">Informatiker EFZ in Ausbildung</span>
+          <span class="sep" aria-hidden="true">·</span>
+          <span data-i18n="home.city">Basel</span>
+        </p>
+        <p class="card__bio reveal" style="--i:3" data-i18n="home.bio">
+          Angehender Informatiker EFZ im 2. Lehrjahr an der IFA Basel. In der Freizeit
+          baue ich eigene Web-Apps, Games und Tools.
+        </p>
+        <div class="card__links reveal" style="--i:4">
+          <a class="btn btn--solid" href="projekte.html" data-i18n="nav.projekte">Projekte</a>
+          <a class="btn btn--ghost" href="kontakt.html" data-i18n="nav.kontakt">Kontakt</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="wayfind wrap" aria-label="Seiten dieser Website">
+      <div class="wayfind__grid">
+        <a class="wayfind__item" href="profil.html">
+          <span class="wayfind__nr">01</span>
+          <span class="wayfind__label" data-i18n="nav.profil">Profil</span>
+        </a>
+        <a class="wayfind__item" href="ausbildung.html">
+          <span class="wayfind__nr">02</span>
+          <span class="wayfind__label" data-i18n="nav.ausbildung">Ausbildung</span>
+        </a>
+        <a class="wayfind__item" href="projekte.html">
+          <span class="wayfind__nr">03</span>
+          <span class="wayfind__label" data-i18n="nav.projekte">Projekte</span>
+        </a>
+        <a class="wayfind__item" href="socials.html">
+          <span class="wayfind__nr">04</span>
+          <span class="wayfind__label" data-i18n="nav.socials">Socials</span>
+        </a>
+        <a class="wayfind__item" href="kontakt.html">
+          <span class="wayfind__nr">05</span>
+          <span class="wayfind__label" data-i18n="nav.kontakt">Kontakt</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="wrap footer__inner">
+      <p class="footer__copy">&copy; <span id="year">2026</span> Dominic Aebersold</p>
+      <p class="footer__note" data-i18n="foot.note">Keine Cookies, kein Tracking, keine Analyse.</p>
+      <nav class="footer__nav" aria-label="Fusszeile">
+        <a href="datenschutz.html" data-i18n="foot.privacy">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="prof.pagetitle">Profil — Dominic Aebersold</title>
+  <meta name="description" content="Profil von Dominic Aebersold: Kurzprofil, IT-Kenntnisse und Sprachen." />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="color-scheme" content="light" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; base-uri 'self'; form-action 'self'" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="nav.skip">Zum Inhalt springen</a>
+
+  <header class="topbar">
+    <nav class="pill" aria-label="Hauptnavigation">
+      <a class="pill__link" href="index.html" data-i18n="nav.start">Start</a>
+      <a class="pill__link is-active" href="profil.html" aria-current="page" data-i18n="nav.profil">Profil</a>
+      <a class="pill__link" href="ausbildung.html" data-i18n="nav.ausbildung">Ausbildung</a>
+      <a class="pill__link" href="projekte.html" data-i18n="nav.projekte">Projekte</a>
+      <a class="pill__link" href="socials.html" data-i18n="nav.socials">Socials</a>
+      <a class="pill__link" href="kontakt.html" data-i18n="nav.kontakt">Kontakt</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Sprache / Language">
+      <button class="lang__btn" type="button" data-lang="de">DE</button>
+      <button class="lang__btn" type="button" data-lang="en">EN</button>
+      <button class="lang__btn" type="button" data-lang="fr">FR</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page wrap" aria-labelledby="title">
+      <header class="page__head">
+        <p class="page__kicker" data-i18n="prof.kicker">01 / Profil</p>
+        <h1 class="page__title" id="title" data-i18n="prof.title">Wer ich bin</h1>
+      </header>
+
+      <p class="lede" data-i18n="prof.lede">
+        Motivierter angehender Informatiker EFZ im 2. Lehrjahr an der IFA in Basel, mit
+        Interesse an Applikations- wie auch Plattformentwicklung. In meiner Freizeit
+        entwickle ich selbständig eigene Anwendungen, Games und Tools und bringe dadurch
+        praktische Erfahrung in Programmierung, Datenbanken und IT-Systemen mit.
+      </p>
+
+      <dl class="facts">
+        <div class="facts__row"><dt data-i18n="prof.f.name">Name</dt><dd>Dominic Aebersold</dd></div>
+        <div class="facts__row"><dt data-i18n="prof.f.role">Rolle</dt><dd data-i18n="prof.v.role">Lernender Informatiker EFZ, Plattformentwicklung</dd></div>
+        <div class="facts__row"><dt data-i18n="prof.f.school">Ausbildung</dt><dd data-i18n="prof.v.school">IFA Basel, seit August 2025 (2. Lehrjahr)</dd></div>
+        <div class="facts__row"><dt data-i18n="prof.f.loc">Standort</dt><dd data-i18n="prof.v.loc">Region Basel</dd></div>
+        <div class="facts__row"><dt data-i18n="prof.f.nat">Nationalität</dt><dd data-i18n="prof.v.nat">Schweiz</dd></div>
+        <div class="facts__row"><dt data-i18n="prof.f.focus">Interessen</dt><dd data-i18n="prof.v.focus">Applikations- und Web-Entwicklung, Game-Dev, IT-Security &amp; OSINT, Cloud</dd></div>
+        <div class="facts__row"><dt data-i18n="prof.f.ref">Referenzen</dt><dd data-i18n="prof.v.ref">Auf Anfrage</dd></div>
+      </dl>
+
+      <h2 class="sub" data-i18n="prof.skills">IT-Kenntnisse</h2>
+      <ul class="skills">
+        <li class="skill">
+          <span class="skill__cat" data-i18n="sk.lang">Programmiersprachen</span>
+          <span class="skill__items">C#, JavaScript, Python</span>
+          <span class="level" data-i18n="lvl.basic">Grundkenntnisse</span>
+        </li>
+        <li class="skill">
+          <span class="skill__cat" data-i18n="sk.db">Datenbanken</span>
+          <span class="skill__items">SQL</span>
+          <span class="level" data-i18n="lvl.basic">Grundkenntnisse</span>
+        </li>
+        <li class="skill">
+          <span class="skill__cat" data-i18n="sk.sys">Plattform &amp; Systeme</span>
+          <span class="skill__items" data-i18n="sk.sys.items">Windows Server, Azure, Hyper-V, Netzwerk (TCP/IP, DNS, DHCP)</span>
+          <span class="level level--good" data-i18n="lvl.good">Gute Kenntnisse</span>
+        </li>
+        <li class="skill">
+          <span class="skill__cat" data-i18n="sk.auto">Automatisierung / Scripting</span>
+          <span class="skill__items">PowerShell, Bash, Lua</span>
+          <span class="level" data-i18n="lvl.basic">Grundkenntnisse</span>
+        </li>
+        <li class="skill">
+          <span class="skill__cat" data-i18n="sk.web">Web &amp; Werkzeuge</span>
+          <span class="skill__items" data-i18n="sk.web.items">HTML, CSS, Git, KI-Tools</span>
+          <span class="level level--good" data-i18n="lvl.good">Gute Kenntnisse</span>
+        </li>
+        <li class="skill">
+          <span class="skill__cat" data-i18n="sk.method">Methoden</span>
+          <span class="skill__items" data-i18n="sk.method.items">HERMES-Projektmanagement</span>
+          <span class="level" data-i18n="lvl.basic">Grundkenntnisse</span>
+        </li>
+      </ul>
+
+      <h2 class="sub" data-i18n="prof.langs">Sprachen</h2>
+      <ul class="skills">
+        <li class="skill">
+          <span class="skill__cat" data-i18n="lang.de">Deutsch</span>
+          <span class="skill__items" data-i18n="lang.de.lvl">Muttersprache</span>
+          <span class="level level--good" data-i18n="lvl.native">Muttersprache</span>
+        </li>
+        <li class="skill">
+          <span class="skill__cat" data-i18n="lang.en">Englisch</span>
+          <span class="skill__items" data-i18n="lang.en.lvl">Sehr gute Kenntnisse in Wort und Schrift</span>
+          <span class="level level--good" data-i18n="lvl.veryGood">Sehr gut</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="wrap footer__inner">
+      <p class="footer__copy">&copy; <span id="year">2026</span> Dominic Aebersold</p>
+      <p class="footer__note" data-i18n="foot.note">Keine Cookies, kein Tracking, keine Analyse.</p>
+      <nav class="footer__nav" aria-label="Fusszeile">
+        <a href="datenschutz.html" data-i18n="foot.privacy">Datenschutz</a>
+        <a href="index.html" data-i18n="nav.start">Start</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
