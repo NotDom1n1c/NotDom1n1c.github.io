@@ -524,7 +524,9 @@ main { flex: 1 0 auto; position: relative; }
   font-size: 0.8rem;
   color: var(--muted);
 }
-.footer__copy, .footer__note { margin: 0; }
+.footer__copy, .footer__note, .footer__views { margin: 0; }
+.footer__views[hidden] { display: none; }
+#views-n { color: var(--accent); font-weight: 600; }
 .footer__nav { display: flex; gap: var(--s-5); }
 .footer__nav a { text-decoration: none; color: var(--muted); transition: color 0.15s ease; }
 .footer__nav a:hover { color: var(--accent); }

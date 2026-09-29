@@ -1,5 +1,6 @@
 /* Dominic Aebersold — persönliche Seite
-   Minimales, datenschutzfreundliches JS. Kein Tracking, keine externen Requests. */
+   Minimales, datenschutzfreundliches JS. Kein Tracking; einzige externe Anfrage
+   ist der anonyme Besucherzähler (abacus.jasoncameron.dev). */
 
 (function () {
   "use strict";
@@ -7,6 +8,35 @@
   // Jahr im Footer aktuell halten
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  // Anonymer Besucherzähler: nur zwei Zahlen, keine IDs, keine Cookies.
+  // "visitors" zählt jeden Browser einmal (Merker in localStorage),
+  // "views" jeden Seitenaufruf. Lokal (localhost / Datei) wird nur gelesen.
+  var viewsEl = document.getElementById("views");
+  if (viewsEl && window.fetch) {
+    var API = "https://abacus.jasoncameron.dev/";
+    var NSP = "notdom1n1c-portfolio/";
+    var host = location.hostname;
+    var live = host !== "" && host !== "localhost" && host !== "127.0.0.1";
+
+    var seen = false;
+    try { seen = localStorage.getItem("da_seen") === "1"; } catch (e) {}
+
+    var call = function (op, key) {
+      return fetch(API + op + "/" + NSP + key, { cache: "no-store" })
+        .then(function (r) { return r.ok ? r.json() : null; });
+    };
+
+    if (live) call("hit", "views").catch(function () {});
+
+    call(live && !seen ? "hit" : "get", "visitors").then(function (d) {
+      if (!d || typeof d.value !== "number") return;
+      if (live && !seen) { try { localStorage.setItem("da_seen", "1"); } catch (e) {} }
+      var n = document.getElementById("views-n");
+      if (n) n.textContent = d.value.toLocaleString("de-CH");
+      viewsEl.hidden = false;
+    }).catch(function () {});
+  }
 
   // Kleine Uhr / Ortszeit in der Hero-Metazeile
   var clockEl = document.getElementById("clock");
