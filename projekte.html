@@ -87,6 +87,75 @@ git push</code></pre>
             </div>
           </div>
         </li>
+
+        <li class="ccard ccard--wide">
+          <button class="ccard__shot" type="button" data-shot="assets/lifeboat.webp" data-title="LIFEBOAT"
+                  data-alt="Statusseite von LIFEBOAT: grosser Titel Last restore drill passed, darunter Wiederherstellungszeit, Anzahl Durchläufe, aufbewahrte Backups und geschützte Zeilen sowie die Schritte der letzten Nacht">
+            <img src="assets/lifeboat.webp" alt="" loading="lazy" />
+          </button>
+          <div class="ccard__main">
+            <div class="ccard__head">
+              <span class="ccard__lang">Python</span>
+              <h3 class="ccard__name">LIFEBOAT</h3>
+            </div>
+            <p class="ccard__desc" data-i18n="c.lifeboat">
+              Backups, die jede Nacht beweisen, dass sie funktionieren. Ein GitHub-Runner startet eine leere
+              MariaDB, stellt das verschlüsselte Backup der letzten Nacht wieder her und vergleicht jede Tabelle
+              mit dem Fingerabdruck vom Backup. Erst dann wird das nächste Backup gemacht. Ein Manipulationstest
+              prüft, dass ein verändertes Backup abgelehnt wird, und wenn etwas schiefgeht, öffnet sich automatisch
+              ein Issue. Im Playground kann man selbst eine Datenbank kaputt machen und wiederherstellen.
+            </p>
+<pre class="ccard__code"><code># Ein Backup zählt erst, wenn es wiederhergestellt ist
+db.restore(gz)
+if db.fingerprint() != manifest["tables"]:
+    raise AssertionError("Restore stimmt nicht mit dem Backup überein")</code></pre>
+            <p class="ccard__meta">Python &middot; MariaDB &middot; AES-256-GCM &middot; GitHub Actions &middot; SQLite im Browser</p>
+            <div class="ccard__links">
+              <a class="ccard__dl ccard__dl--link" href="https://notdom1n1c.github.io/lifeboat/" target="_blank" rel="noopener">
+                <span data-i18n="c.lifeboat.demo">Statusseite und Playground</span>
+                <span class="ccard__size">Live</span>
+              </a>
+              <a class="ccard__dl ccard__dl--link" href="https://github.com/NotDom1n1c/lifeboat" target="_blank" rel="noopener">
+                <span data-i18n="c.launchpad.code">Quellcode und Architektur</span>
+                <span class="ccard__size">GitHub</span>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <li class="ccard ccard--wide">
+          <button class="ccard__shot" type="button" data-shot="assets/lockbox.webp" data-title="LOCKBOX"
+                  data-alt="LOCKBOX im dunklen Tresor-Design: links die Liste der Secrets nach Apps gruppiert, rechts ein aufgedeckter API-Key mit Versionen, Rotations-Hinweis und Knopf für eine neue Version">
+            <img src="assets/lockbox.webp" alt="" loading="lazy" />
+          </button>
+          <div class="ccard__main">
+            <div class="ccard__head">
+              <span class="ccard__lang">Security</span>
+              <h3 class="ccard__name">LOCKBOX</h3>
+            </div>
+            <p class="ccard__desc" data-i18n="c.lockbox">
+              Mein eigener Secrets-Manager für Passwörter und API-Keys. Jeder Wert wird mit einem eigenen Schlüssel
+              verschlüsselt, und dieser mit einem Master-Key, der nie gespeichert wird. Jede App sieht nur die Secrets,
+              die ihre Regeln erlauben. Jeder Zugriff landet in einem Audit-Log, das mit Hashes verkettet ist: Wer einen
+              Eintrag ändert, bricht die Kette. Im Playground kann man sich als Admin, App oder Angreifer anmelden und
+              alles selbst ausprobieren.
+            </p>
+<pre class="ccard__code"><code>// Envelope Encryption: ein eigener Schlüssel pro Wert
+const data = await seal(dek, utf8(value), `lockbox:${path}:v${version}`);
+const wrapped = await seal(master, dekRaw, `${aad}:dek:${masterId}`);</code></pre>
+            <p class="ccard__meta">Node.js &middot; Web Crypto &middot; AES-256-GCM &middot; SHA-256 Hash-Kette &middot; Docker</p>
+            <div class="ccard__links">
+              <a class="ccard__dl ccard__dl--link" href="https://notdom1n1c.github.io/lockbox/" target="_blank" rel="noopener">
+                <span data-i18n="c.lockbox.demo">Playground ausprobieren</span>
+                <span class="ccard__size">Live</span>
+              </a>
+              <a class="ccard__dl ccard__dl--link" href="https://github.com/NotDom1n1c/lockbox" target="_blank" rel="noopener">
+                <span data-i18n="c.launchpad.code">Quellcode und Architektur</span>
+                <span class="ccard__size">GitHub</span>
+              </a>
+            </div>
+          </div>
+        </li>
       </ul>
 
       <h2 class="cat" id="cat-web">
