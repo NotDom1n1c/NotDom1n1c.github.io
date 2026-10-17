@@ -1175,3 +1175,7 @@ main { flex: 1 0 auto; position: relative; }
 
 /* Hoechste Kenntnis-Stufe (Sehr gute Kenntnisse) */
 .level--top { color: var(--bg); background: var(--ink); border-color: var(--ink); font-weight: 600; }
+
+/* external links on code cards (LAUNCHPAD) */
+.ccard__links { display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.ccard__dl--link::before { content: "\2197"; }

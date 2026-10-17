@@ -44,8 +44,53 @@
         sortiert, damit du siehst, womit ich jeweils gearbeitet habe.
       </p>
 
-      <h2 class="cat" id="cat-web">
+      <h2 class="cat" id="cat-platform">
         <span class="cat__nr">A</span>
+        <span data-i18n="cat.platform">Plattform &amp; DevOps</span>
+      </h2>
+      <p class="cat__desc" data-i18n="cat.platform.desc">
+        Wie Software gebaut, geprüft und ausgeliefert wird. Infrastruktur als Code, Pipelines und Betrieb.
+      </p>
+      <ul class="ccards">
+        <li class="ccard ccard--wide">
+          <button class="ccard__shot" type="button" data-shot="assets/launchpad.webp" data-title="LAUNCHPAD"
+                  data-alt="Screenshot des LAUNCHPAD-Portals: dunkles Dashboard mit Kennzahlen, Plattform-Komponenten und Karten für die Apps Ember, GAMBIT und Steuerrechner, alle gesund und synchron mit Git">
+            <img src="assets/launchpad.webp" alt="" loading="lazy" />
+          </button>
+          <div class="ccard__main">
+            <div class="ccard__head">
+              <span class="ccard__lang">Kubernetes</span>
+              <h3 class="ccard__name">LAUNCHPAD</h3>
+            </div>
+            <p class="ccard__desc" data-i18n="c.launchpad">
+              Meine eigene Entwickler-Plattform auf Kubernetes. Ein Klick auf «New app» erstellt
+              ein GitHub-Repo aus einer Vorlage, eine CI-Pipeline mit Tests und Sicherheits-Scan,
+              ein Container-Image und ein Deployment über Argo CD. Danach läuft die App mit eigener
+              URL, Metriken, Logs und Alarmen. Alles ist als Code beschrieben: der Cluster, die
+              GitHub-Repos mit OpenTofu und jede App in Git. Steuerrechner, GAMBIT und Ember laufen
+              schon darauf. Ein automatischer Test baut die ganze Plattform bei jeder Änderung neu auf.
+            </p>
+<pre class="ccard__code"><code># Deploy über GitOps: neuer Image-Tag ins Repo, Argo CD rollt aus
+sed -i "s/newTag: .*/newTag: $TAG/" deploy/kustomization.yaml
+git commit -am "deploy: $TAG [skip ci]"
+git push</code></pre>
+            <p class="ccard__meta">k3d &middot; Argo CD &middot; GitHub Actions &middot; Trivy &middot; Prometheus &middot; Grafana &middot; Loki &middot; OpenTofu &middot; Node.js</p>
+            <div class="ccard__links">
+              <a class="ccard__dl ccard__dl--link" href="https://notdom1n1c.github.io/launchpad/" target="_blank" rel="noopener">
+                <span data-i18n="c.launchpad.demo">Interaktive Demo</span>
+                <span class="ccard__size">Pages</span>
+              </a>
+              <a class="ccard__dl ccard__dl--link" href="https://github.com/NotDom1n1c/launchpad" target="_blank" rel="noopener">
+                <span data-i18n="c.launchpad.code">Quellcode und Architektur</span>
+                <span class="ccard__size">GitHub</span>
+              </a>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <h2 class="cat" id="cat-web">
+        <span class="cat__nr">B</span>
         <span data-i18n="cat.web">Web &amp; Apps</span>
       </h2>
       <p class="cat__desc" data-i18n="cat.web.desc">
@@ -57,7 +102,7 @@
           <div class="pcard__shot" style="background-image:url('assets/nullbyte.png')"></div>
           <span class="pcard__go" aria-hidden="true">&#8599;</span>
           <div class="pcard__body">
-            <span class="pcard__nr">A01</span>
+            <span class="pcard__nr">B01</span>
             <h3 class="pcard__name">NULLBYTE</h3>
             <p class="pcard__desc" data-i18n="p.nullbyte">Responsive Website mit über 40 interaktiven IT- und OSINT-Tools, komplett client-seitig.</p>
             <span class="pcard__tags"><span class="pcard__live">Live</span><span>Web</span><span>OSINT</span><span>JavaScript</span></span>
@@ -69,7 +114,7 @@
           <div class="pcard__shot" style="background-image:url('assets/ember.webp')"></div>
           <span class="pcard__go" aria-hidden="true">&#8599;</span>
           <div class="pcard__body">
-            <span class="pcard__nr">A02</span>
+            <span class="pcard__nr">B02</span>
             <h3 class="pcard__name">Ember</h3>
             <p class="pcard__desc" data-i18n="p.ember">Bild-Editor komplett im Browser: Ebenen, Looks, Kurven, Zuschneiden und echter Export. Alles lokal berechnet, nichts wird hochgeladen.</p>
             <span class="pcard__tags"><span class="pcard__live">Live</span><span>Canvas</span><span>Web-App</span><span>Privacy</span></span>
@@ -81,7 +126,7 @@
           <div class="pcard__shot" style="background-image:url('assets/steuerrechner.webp?v=2')"></div>
           <span class="pcard__go" aria-hidden="true">&#8599;</span>
           <div class="pcard__body">
-            <span class="pcard__nr">A03</span>
+            <span class="pcard__nr">B03</span>
             <h3 class="pcard__name">Steuerrechner</h3>
             <p class="pcard__desc" data-i18n="p.steuer">Schweizer Steuerrechner mit echten ESTV-Tarifen: Netto pro Monat, Kantonsvergleich und Progressionskurve. Rechnet lokal im Browser.</p>
             <span class="pcard__tags"><span class="pcard__live">Live</span><span>JavaScript</span><span>Finanzen</span><span>Schweiz</span></span>
@@ -93,7 +138,7 @@
           <div class="pcard__shot" style="background-image:url('assets/flipper.png')"></div>
           <span class="pcard__go" aria-hidden="true">&#8599;</span>
           <div class="pcard__body">
-            <span class="pcard__nr">A04</span>
+            <span class="pcard__nr">B04</span>
             <h3 class="pcard__name">Flipper 3D Explorer</h3>
             <p class="pcard__desc" data-i18n="p.flipper">Interaktiver 3D-Teardown des Flipper Zero, gebaut mit three.js und React.</p>
             <span class="pcard__tags"><span class="pcard__live">Live</span><span>three.js</span><span>React</span><span>TypeScript</span></span>
@@ -102,7 +147,7 @@
       </div>
 
       <h2 class="cat" id="cat-games">
-        <span class="cat__nr">B</span>
+        <span class="cat__nr">C</span>
         <span data-i18n="cat.games">Games</span>
       </h2>
       <p class="cat__desc" data-i18n="cat.games.desc">
@@ -114,7 +159,7 @@
           <div class="pcard__shot" style="background-image:url('assets/gambit.webp?v=2')"></div>
           <span class="pcard__go" aria-hidden="true">&#8599;</span>
           <div class="pcard__body">
-            <span class="pcard__nr">B01</span>
+            <span class="pcard__nr">C01</span>
             <h3 class="pcard__name">GAMBIT</h3>
             <p class="pcard__desc" data-i18n="p.gambit">Online-Schachplattform mit eigener Schach-Engine, Bots, Puzzles und Trainingsmodi.</p>
             <span class="pcard__tags"><span class="pcard__live">Live</span><span>Engine</span><span>JavaScript</span><span>Game</span></span>
@@ -126,7 +171,7 @@
           <div class="pcard__shot" style="background-image:url('assets/rider.webp?v=2')"></div>
           <span class="pcard__go" aria-hidden="true">&#8599;</span>
           <div class="pcard__body">
-            <span class="pcard__nr">B02</span>
+            <span class="pcard__nr">C02</span>
             <h3 class="pcard__name">DRIVER</h3>
             <p class="pcard__desc" data-i18n="p.rider">Stunt-Racing im Browser: Rampen, Loopings und Flips, 8 Autodesigns, 32 Levels und Challenges. Früher hiess das Spiel «Rider».</p>
             <span class="pcard__tags"><span class="pcard__live">Live</span><span>Canvas</span><span>Physik</span><span>Game</span></span>
@@ -138,7 +183,7 @@
           <div class="pcard__shot" style="background-image:url('assets/arise.png')"></div>
           <span class="pcard__go" aria-hidden="true">&#8599;</span>
           <div class="pcard__body">
-            <span class="pcard__nr">B03</span>
+            <span class="pcard__nr">C03</span>
             <h3 class="pcard__name">LEVEL UP</h3>
             <p class="pcard__desc" data-i18n="p.arise">Gamifizierte Fitness-App im Solo-Leveling-Stil mit XP, Rängen und Quests. Früher hiess die App «Arise».</p>
             <span class="pcard__tags"><span class="pcard__live">Live</span><span>Web-App</span><span>Gamification</span><span>JavaScript</span></span>
@@ -147,7 +192,7 @@
       </div>
 
       <h2 class="cat" id="cat-scripts">
-        <span class="cat__nr">C</span>
+        <span class="cat__nr">D</span>
         <span data-i18n="cat.scripts">Tools &amp; Automatisierung</span>
       </h2>
       <p class="cat__desc" data-i18n="cat.scripts.desc">
