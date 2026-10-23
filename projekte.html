@@ -270,6 +270,45 @@ const wrapped = await seal(master, dekRaw, `${aad}:dek:${masterId}`);</code></pr
       </p>
       <ul class="ccards">
         <li class="ccard ccard--wide">
+          <button class="ccard__shot" type="button" data-shot="assets/atlas.webp" data-title="ATLAS"
+                  data-alt="ATLAS: die Übersicht der App mit Seitenleiste, Kennzahlen zu Projekten und Dateien, zuletzt bearbeiteten Projekten und den Bereichen mit Programm-Symbolen">
+            <img src="assets/atlas.webp" alt="" loading="lazy" />
+          </button>
+          <div class="ccard__main">
+            <div class="ccard__head">
+              <span class="ccard__lang">Python</span>
+              <h3 class="ccard__name">ATLAS</h3>
+            </div>
+            <p class="ccard__desc" data-i18n="c.atlas">
+              Mein eigenes Kontrollzentrum für alle Projekte auf dem Laptop. Ein kleiner Python-Server
+              sucht die Projekte zusammen und zeigt sie mit Vorschaubildern in einer App, dazu alle
+              Präsentationen, Excel- und Word-Dateien an einem Ort. Von dort starte ich Dev-Server,
+              VirtualBox und WSL, überwache Live-Seiten und GitHub-Actions und sehe E-Mails, Discord und
+              Spotify. Für die IT gibt es Netzwerk-Werkzeuge, Server-Verbindungen, einen Arbeitsrapport
+              und ein Inventar mit Word-Export. Automationen laufen nach dem Muster «wenn … dann …».
+              Auf der Website läuft die echte App als Live-Demo, mit Beispieldaten statt meinen Dateien.
+            </p>
+<pre class="ccard__code"><code># Automationen melden nur, was neu dazukommt
+new = [(k, v) for k, v in ev if k not in st["seen"]]
+for k, v in new:
+    fire(r, v)
+# Was verschwindet und wiederkommt, wird wieder gemeldet
+st["seen"] = keys</code></pre>
+            <p class="ccard__meta">Python &middot; Vanilla JS &middot; Canvas &middot; Windows-API &middot; Office &middot; GitHub-API</p>
+            <div class="ccard__links">
+              <a class="ccard__dl ccard__dl--link" href="https://notdom1n1c.github.io/atlas-site/" target="_blank" rel="noopener">
+                <span data-i18n="c.atlas.site">Website mit Handbuch</span>
+                <span class="ccard__size">Live</span>
+              </a>
+              <a class="ccard__dl ccard__dl--link" href="https://notdom1n1c.github.io/atlas-site/demo.html" target="_blank" rel="noopener">
+                <span data-i18n="c.atlas.demo">Live-Demo der App</span>
+                <span class="ccard__size">Demo</span>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <li class="ccard ccard--wide">
           <button class="ccard__shot" type="button" data-shot="assets/makro.png" data-title="Makro-Rekorder"
                   data-alt="Screenshot des Makro-Rekorders: dunkles Fenster mit Status Bereit, Buttons Aufnehmen F9 und Abspielen F10, Einstellungen für Wiederholung, Tempo und Mausbewegung sowie Speichern und Laden">
             <img src="assets/makro.png" alt="" loading="lazy" />
